@@ -1,7 +1,7 @@
 import telebot
 import requests
 from flask import Flask
-BOT_API_KEY = '5572876344:AAHRWLtBu-_B-b7fBX5P17ofmjl9CVrpUJs'
+BOT_API_KEY = 'api_key'
 bot = telebot.TeleBot(BOT_API_KEY)
 
 app= Flask(__name__)
@@ -9,17 +9,17 @@ app= Flask(__name__)
 
 import requests
 import os
-API_KEY ="3309d740fadc22f8d329ae73435bbc97"
-account_sid = "ACb104a17db972216231fee8b5238f9a95"
-auth_token = "c495d740081b428d1a381520203621b4"
+API_KEY ="api_key"
+account_sid = "account_sid"
+auth_token = "auth_token"
 
 
 @app.route('/')
     @bot.message_handler(commands=['weather_forecast', 'weather'])
     def check_weather_forecast(message):
     
-        parameter ={"lat" :42.258179,
-                    "lon" :8.746130,
+        parameter ={"lat" :lat,
+                    "lon" :lon,
                     "appid" : API_KEY,
                     "exclude": "current,minutely,daily"
         }
